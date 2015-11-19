@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Four8044-config" deployDir="wtpwebapps" hostname="localhost" id="Four8044" name="Four8044" runtime-id="Four8044" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
+    <list key="modules" value0="JustFourHours::org.eclipse.jst.j2ee.server:JustFourHours::jst.web::2.3"/>
+  </server>
+</servers>
