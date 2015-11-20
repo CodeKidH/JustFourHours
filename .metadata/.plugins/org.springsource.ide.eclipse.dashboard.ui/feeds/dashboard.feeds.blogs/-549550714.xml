@@ -5,7 +5,36 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2015-11-18T11:35:00Z</updated>
+  <updated>2015-11-19T23:20:00Z</updated>
+  <entry>
+    <title>Spring XD 1.3 GA and Flo for Spring XD 1.0 GA released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/11/19/spring-xd-1-3-ga-and-flo-for-spring-xd-1-0-ga-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Mark Pollack</name>
+    </author>
+    <id>tag:spring.io,2015-11-19:2303</id>
+    <updated>2015-11-19T23:20:00Z</updated>
+    <content type="html">&lt;p&gt;Today we are pleased to announce the general availability of Spring XD 1.3 and Flo for Spring XD 1.0.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring XD 1.3 GA: &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/xd/spring-xd/1.3.0.RELEASE/spring-xd-1.3.0.RELEASE-dist.zip"&gt;zip&lt;/a&gt;, &lt;a href="http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/#osx-homebrew-installation"&gt;brew&lt;/a&gt; and &lt;a href="http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/#redhatcentos-installation"&gt;rpm&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Flo for Spring XD 1.0 GA: &lt;a href="https://network.pivotal.io/products/p-spring-flo/"&gt;zip&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition to bug fixes we have also added several new features in the 1.3 release line&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/#composed-jobs"&gt;Job Composition DSL&lt;/a&gt; allows for the creation of a complex graph of job executions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.pivotal.io/big-data-pivotal/features/the-new-flo-for-spring-xd"&gt;Flo for Spring XD&lt;/a&gt; designer supports creating &lt;a href="http://docs.pivotal.io/spring-flo/building-composed-jobs.html"&gt;composed jobs&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Admin UI supports execution history of composed jobs.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/#cassandra"&gt;Cassandra Sink&lt;/a&gt; and &lt;a href="http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/#header-enricher"&gt;Header Enricher Processor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://docs.spring.io/spring-xd/docs/1.3.0.RELEASE/reference/html/#gpfdist"&gt;Gpfdist sink&lt;/a&gt; now supports update operations and full range of control file options&lt;/li&gt;
+  &lt;li&gt;Spark 1.3.1 Support&lt;/li&gt;
+  &lt;li&gt;A timeout value for flushing writes to HDFS in order to ensure data is persisted on the HDFS DataNode¡¯s disks.&lt;/li&gt;
+  &lt;li&gt;General dependency upgrades, Spring Data Gosling, SI 4.2, and Boot 1.2&lt;/li&gt;
+  &lt;li&gt;Hadoop distribution version updates to Apache Hadoop 2.7.1 and Hortonworks Data Platform 2.2. Pivotal Hadoop 2.1, 3.0 and Cloudera Hadoop 5.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next release line introduces a major redesign to the underlying architecture and breaking up Spring XD into several independent projects. Building upon Spring Boot and Spring Cloud capabilities, Spring XD is actively being redesigned as &lt;a href="http://cloud.spring.io/spring-cloud-dataflow/"&gt;Spring Cloud Data Flow&lt;/a&gt; - a cloud native programming and operating model for composable message-driven microservices. More details can be found in the blog posts: &lt;a href="http://blog.pivotal.io/pivotal-cloud-foundry/products/introducing-spring-cloud-data-flow"&gt;Introducing Spring Cloud Data Flow&lt;/a&gt; and &lt;a href="http://blog.pivotal.io/pivotal-perspectives/features/a-quick-look-at-spring-cloud-data-flow"&gt;A Quick Look At Spring Cloud Data Flow&lt;/a&gt;. InfoQ also summarizes the changes in the article &lt;a href="http://www.infoq.com/news/2015/09/spring-cloud-data-flow"&gt;SpringXD being Re-architected and Re-branded to Spring Cloud Data Flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Feedback is very important, so please get in touch with questions and comments via&lt;br/&gt;* &lt;a href="http://stackoverflow.com/questions/tagged/spring-xd"&gt;StackOverflow&lt;/a&gt; &lt;code&gt;spring-xd&lt;/code&gt; tag&lt;br/&gt;* &lt;a href="https://jira.spring.io/browse/XD/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel"&gt;Spring JIRA&lt;/a&gt; or &lt;a href="https://github.com/spring-projects/spring-xd/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring IO Platform 2.0.0.RELEASE</title>
     <link rel="alternate" href="https://spring.io/blog/2015/11/18/spring-io-platform-2-0-0-release" />
@@ -1185,16 +1214,5 @@ You updated the UI to show an employee&amp;#8217;s manager and also display erro
     <id>tag:spring.io,2015-10-21:2283</id>
     <updated>2015-10-21T04:59:25Z</updated>
     <content type="html">&lt;p&gt;Spring Boot v1.3.0.RC1 is available now from the &lt;a href="http://repo.springsource.org/milestone/"&gt;Spring milestone repository&lt;/a&gt;. This release closes &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.3.0.RC1+is%3Aissue+is%3Aclosed"&gt;almost 140 issues&lt;/a&gt; and merges &lt;a href="https://github.com/spring-projects/spring-boot/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+is%3Aclosed+milestone%3A1.3.0.RC1"&gt;53 pull-requests&lt;/a&gt;! Thanks to everyone that has contributed.&lt;/p&gt;&lt;p&gt;We&amp;rsquo;re not planning on having a long release candidate phase, so please do try RC1 and let us know if you find any problems.&lt;/p&gt;&lt;p&gt;For a complete list of changes, and upgrade instructions, see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.3-Release-Notes"&gt;Spring Boot 1.3 Release Notes&lt;/a&gt; on the wiki and the updated &lt;a href="http://docs.spring.io/spring-boot/docs/1.3.0.RC1/reference/htmlsingle/"&gt;reference documentation&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2015 replay: Modern Java Component Design with Spring Framework 4.2</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/10/19/springone2gx-2015-replay-modern-java-component-design-with-spring-framework-4-2" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2015-10-20:2282</id>
-    <updated>2015-10-19T19:55:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015&lt;br/&gt;Speakers: Juergen Holler, Stephane Nicoll&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/modern-java-component-design-with-spring-framework-42"&gt;http://www.slideshare.net/SpringCentral/modern-java-component-design-with-spring-framework-42&lt;/a&gt;&lt;br/&gt;Spring&amp;rsquo;s programming and configuration model has a strong design philosophy with respect to application components and configuration artifacts. Spring&amp;rsquo;s annotation-based component story is fine-tuned for source code readability as well as consistency across an entire application&amp;rsquo;s codebase. This session presents selected Spring Framework 4 component model highlights, with a focus on the upcoming Spring Framework 4.2 and a selection of Java 8 enabled features, illustrated with many code examples and noteworthy design considerations.&lt;br/&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/7uii6osglDg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

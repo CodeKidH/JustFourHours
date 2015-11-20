@@ -1,0 +1,13 @@
+package controller;
+
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class Main {
+	
+	@RequestMapping(value = "main")
+	public String Main(ModelMap model) throws Exception{
+		
+		return "main";
+	}
+}
