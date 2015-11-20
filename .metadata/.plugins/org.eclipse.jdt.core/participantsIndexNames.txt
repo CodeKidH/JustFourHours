@@ -1,3 +1,0 @@
-INDEX VERSION 1.127
-D:\JustFourHours\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1188172419.index
-\JustFourHours_ver1\src\main\java
