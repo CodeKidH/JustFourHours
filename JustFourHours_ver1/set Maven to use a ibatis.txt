@@ -1,0 +1,16 @@
+* ibatis
+
+1. Need a 2 config in maven
+
+  <dependency> 
+    <groupId>org.springframework</groupId> 
+    <artifactId>spring-orm</artifactId> 
+    <version>3.0.4.RELEASE</version> 
+    <scope>compile</scope> 
+</dependency>
+
+<dependency> 
+    <groupId>org.apache.ibatis</groupId> 
+    <artifactId>ibatis-sqlmap</artifactId> 
+    <version>2.3.4.726</version> 
+</dependency>

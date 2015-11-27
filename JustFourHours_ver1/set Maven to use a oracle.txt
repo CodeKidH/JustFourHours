@@ -1,0 +1,20 @@
+* To use a Oracle DB
+
+1. set Maven
+
+  - we need  2 config
+  
+  1) <dependency>
+	<groupId>com.oracle</groupId>
+	<artifactId>ojdbc6</artifactId>
+	<version>11.1.0.7.0</version>
+    </dependency>
+
+  2)  <repositories>
+ 	<repository>
+	  <id>oracle</id>
+	  <name>ORACLE JDBC Repository</name>
+	  <url>http://maven.jahia.org/maven2</url>
+	</repository>
+     </repositories>
+    

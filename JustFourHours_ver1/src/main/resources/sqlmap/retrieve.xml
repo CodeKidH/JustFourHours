@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Book">
+	<typeAlias alias ="Book" type="model.Book"/>
+	<resultMap id="bookList" class="Book">
+		<result property="num" column="num"/>
+		<result property="cust_name" column="cust_name"/>
+		<result property="book_title" column="book_title"/>
+		<result property="borrow_date" column="borrow_date"/>
+	</resultMap>
+	
+	<select id="getBookList" resultMap="bookList">
+		SELECT num, cust_name, book_title, borrow_date FROM CUSTOMER_LIST
+	</select>
+</sqlMap>

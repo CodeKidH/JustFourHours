@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import model.Book;
@@ -21,7 +22,7 @@ public class IndexController {
 	private CustList custList;
 	
 	@RequestMapping("index")
-	public String index(Model model){
+	public String index(Model model) throws SQLException{
 		
 		List<Book> getList = this.custList.getList();
 		
