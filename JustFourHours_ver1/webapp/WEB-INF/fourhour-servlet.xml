@@ -14,12 +14,7 @@
 	
 	<mvc:annotation-driven />
 	
-	 <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean id="loggerInterceptor" class="logger.LoggerInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+	 
 	
 	<bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
