@@ -1,0 +1,6 @@
+
+* mysql primary key setting
+
+alter table customer_list modify column num int auto_increment primary key;
+
+alter table customer_list modify column borrow_date TIMESTAMP DEFAULT NOW();

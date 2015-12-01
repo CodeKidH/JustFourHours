@@ -14,6 +14,7 @@
 <body>
 	<div class="container">
 		<h2>People List</h2>
+		<input type="button" name="insert" value="insert" onClick="location.href='insertMove.html'"/>
 		<table class="table table-bordered" width="450">
 			<thead>
 				<tr>

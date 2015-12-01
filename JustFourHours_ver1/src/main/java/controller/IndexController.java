@@ -34,12 +34,17 @@ public class IndexController {
 		return "index";
 	}
 	
+	@RequestMapping(value="insertMove")
+	public String insertMove (){
+		return "insert";
+	}
+	
 	@RequestMapping(value="insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request, Model model)throws SQLException{
 		Book book = new Book();
 		
-		book.setBook_title((String)request.getParameter(""));
-		book.setCust_name((String)request.getParameter(""));
+		book.setBook_title((String)request.getParameter("title"));
+		book.setCust_name((String)request.getParameter("cust"));
 		
 		this.custList.insertList(book);
 		

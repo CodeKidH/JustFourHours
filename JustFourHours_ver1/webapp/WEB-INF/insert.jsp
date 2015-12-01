@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action="insert.html" method="post">
+	<input type="text" name="title" value=""/>
+	<input type="text" name="cust" value=""/>
+	<input type="submit" name="submit" value=" Submit ">
+</form>
 </body>
 </html>

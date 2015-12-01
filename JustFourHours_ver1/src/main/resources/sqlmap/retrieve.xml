@@ -3,6 +3,7 @@
 	"http://www.ibatis.com/dtd/sql-map-2.dtd">
 <sqlMap namespace="Book">
 	<typeAlias alias ="Book" type="model.Book"/>
+	
 	<resultMap id="bookList" class="Book">
 		<result property="num" column="num"/>
 		<result property="cust_name" column="cust_name"/>
@@ -13,4 +14,11 @@
 	<select id="getBookList" resultMap="bookList">
 		SELECT num, cust_name, book_title, borrow_date FROM CUSTOMER_LIST
 	</select>
+	
+	<insert id="insertBook" parameterClass="model.Book">
+		INSERT INTO CUSTOMER_LIST(cust_name, book_title)
+		VALUES(#cust_name#, #book_title#)
+	</insert>
+	
+	
 </sqlMap>
