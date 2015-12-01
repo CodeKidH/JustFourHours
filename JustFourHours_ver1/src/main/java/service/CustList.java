@@ -8,4 +8,6 @@ import model.Book;
 public interface CustList {
 	
 	List<Book> getList() throws SQLException;
+	
+	public void insertList(Book book) throws SQLException;
 }
