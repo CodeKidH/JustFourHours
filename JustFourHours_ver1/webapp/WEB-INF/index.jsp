@@ -6,16 +6,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+	.container{
+		width : 1000px;
+		margin : 0 auto;
+	}
+</style>
+
 </head>
 <body>
 	<div class="container">
 		<h2>People List</h2>
 		<input type="button" name="insert" value="insert" onClick="location.href='insertMove.html'"/>
-		<table class="table table-bordered" width="450">
+		<table border = "1" width="450">
 			<thead>
 				<tr>
 					<td width="50">Num</td>
@@ -35,23 +39,17 @@
 			</c:forEach>
 			</tbody>
 		</table>
-	</div>
 	
-	<div class="row">
-		<div class="col-sm-4">
-		</div>
-		<div class="col-sm-4">
-			<div class="container" id="search">
-				<form class="form-inline" role="form">
-					<div class="form-group">
-						<label for="searching">Search</label>
-						<input type="text" class="form-control" id="context">
-					</div>
-					<button type="submit" class="btn btn-default">search</button>
-				</form>
-			</div>
+		<div id="search">
+			<form>
+				<div >
+					Search
+					<input type="text" id="context">
+					<button type="submit" >search</button>
+				</div>
+				
+			</form>
 		</div>
 	</div>
-	
 </body>
 </html>

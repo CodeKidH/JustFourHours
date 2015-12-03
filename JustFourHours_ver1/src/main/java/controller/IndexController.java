@@ -19,7 +19,7 @@ import service.CustList;
 @Controller
 public class IndexController {
 	
-	 Logger log = Logger.getLogger(IndexController.class);
+	Logger log = Logger.getLogger(IndexController.class);
 	
 	@Autowired 
 	private CustList custList;
