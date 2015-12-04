@@ -33,7 +33,7 @@
 			<tr>
 				<td>${item.num}</td>
 				<td>${item.cust_name}</td>
-				<td>${item.book_title}</td>
+				<td><a href="detail.html?num=${item.num}">${item.book_title}</a></td>
 				<td>${item.borrow_date}</td>
 			</tr>
 			</c:forEach>

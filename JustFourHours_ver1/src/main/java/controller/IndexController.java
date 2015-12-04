@@ -1,7 +1,9 @@
 package controller;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import service.CustList;
 
@@ -53,4 +56,22 @@ public class IndexController {
 		
 		return "index";
 	}
+	
+	@RequestMapping(value="detail")
+	public ModelAndView detail(Integer num) throws SQLException{
+		
+		List<Book> getOneList = this.custList.getOneList(num);
+		
+		Map<String, Object> model =new HashMap<String, Object>();
+		
+		model.put("oneList", getOneList.get(0));
+		
+		ModelAndView modelAndView = new ModelAndView("update");
+		modelAndView.addAllObjects(model);
+		
+		return modelAndView;
+	}
+	
+	
+	
 }

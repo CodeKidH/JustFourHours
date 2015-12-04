@@ -29,6 +29,12 @@ public class DaoListImpl implements DaoList{
 	public void insertList(Book book) throws SQLException{
 		query.insert("Book.insertBook", book);
 	}
+	
+	public List<Book> getOneList(Integer num) throws SQLException{
+		
+		List<Book> getOneList = query.queryForList("Book.detail",num);
+		return getOneList;
+	}
 
 
 	

@@ -26,4 +26,8 @@ public class CustListImpl implements CustList{
 	public void insertList(Book book) throws SQLException{
 		 this.daoList.insertList(book);
 	}
+	
+	public List<Book> getOneList(Integer num) throws SQLException{
+		return this.daoList.getOneList(num);
+	}
 }

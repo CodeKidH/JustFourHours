@@ -14,7 +14,6 @@
 </head>
 <body>
 <div class="form">
-	
 	<h2>力格 累己</h2>
 	<form action="insert.html" method="post">
 		<table border ="1" width="280">
@@ -22,7 +21,6 @@
 			<tr><td>绊按疙</td><td class="center"><input type="text" name="cust" value=""/></td></tr>
 		</table>
 		<input type="submit" name="submit" value=" submit "/>
-		<input type="button" name="delete" value=" delete "/>
 		<input type="reset" name="reset" value=" reset "/>
 	</form>
 </div>

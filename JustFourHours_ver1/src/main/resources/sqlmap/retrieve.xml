@@ -20,5 +20,11 @@
 		VALUES(#cust_name#, #book_title#)
 	</insert>
 	
+	<select id="detail" parameterClass="int" resultClass="Book">
+		SELECT cust_name, book_title
+		  FROM CUSTOMER_LIST
+		 WHERE num = #num#
+	</select>
+	
 	
 </sqlMap>
