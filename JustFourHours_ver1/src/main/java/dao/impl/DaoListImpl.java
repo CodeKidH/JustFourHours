@@ -35,8 +35,14 @@ public class DaoListImpl implements DaoList{
 		List<Book> getOneList = query.queryForList("Book.detail",num);
 		return getOneList;
 	}
+	
+	public void delete(String num) throws SQLException{
+		query.delete("Book.delete",num);
+	}
 
-
+	public void update(Book book) throws SQLException{
+		query.update("Book.update",book);
+	}
 	
 	
 }

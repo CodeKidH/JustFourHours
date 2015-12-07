@@ -30,4 +30,12 @@ public class CustListImpl implements CustList{
 	public List<Book> getOneList(Integer num) throws SQLException{
 		return this.daoList.getOneList(num);
 	}
+	
+	public void delete(String num) throws SQLException{
+		this.daoList.delete(num);
+	}
+	
+	public void update(Book book) throws SQLException{
+		this.daoList.update(book);
+	}
 }

@@ -2,15 +2,15 @@ package model;
 
 public class Book {
 	
-	public int num;
+	public String num;
 	public String cust_name;
 	public String book_title;
 	public String borrow_date;
 	
-	public int getNum() {
+	public String getNum() {
 		return num;
 	}
-	public void setNum(int num) {
+	public void setNum(String num) {
 		this.num = num;
 	}
 	public String getCust_name() {

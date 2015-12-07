@@ -21,10 +21,22 @@
 	</insert>
 	
 	<select id="detail" parameterClass="int" resultClass="Book">
-		SELECT cust_name, book_title
+		SELECT cust_name, book_title, num, borrow_date
 		  FROM CUSTOMER_LIST
 		 WHERE num = #num#
 	</select>
+	
+	 <delete id="delete" parameterClass="String">
+		  DELETE FROM CUSTOMER_LIST
+		  WHERE num = #num#
+	 </delete>
+	 
+	 <update id="update" parameterClass="model.Book">
+	      UPDATE CUSTOMER_LIST
+	      SET    cust_name = #cust_name#,
+	      		 book_title = #book_title#
+	      WHERE  num = #num#
+	  </update>
 	
 	
 </sqlMap>

@@ -15,7 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import service.CustList;
 
@@ -28,13 +30,12 @@ public class IndexController {
 	private CustList custList;
 	
 	@RequestMapping("index")
-	public String index(Model model) throws SQLException{
+	public void index(Model model) throws SQLException{
 		
 		List<Book> getList = this.custList.getList();
 		
 		model.addAttribute("custList",getList);
 		
-		return "index";
 	}
 	
 	@RequestMapping(value="insertMove")
@@ -58,7 +59,7 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value="detail")
-	public ModelAndView detail(Integer num) throws SQLException{
+	public ModelAndView detail(@RequestParam int num) throws SQLException{
 		
 		List<Book> getOneList = this.custList.getOneList(num);
 		
@@ -72,6 +73,29 @@ public class IndexController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value="delete")
+    public String delete(@RequestParam String num) throws Exception {
+    	
+    	 custList.delete(num);
+    	 
+    	 return "redirect:/index.html";
+    	
+    }
 	
+	@RequestMapping(value="update")
+	public String update(HttpServletRequest request, RedirectAttributes redirectAttributes) throws SQLException{
+		
+		Book book = new Book();
+		
+		book.setBook_title(request.getParameter("title"));
+		book.setCust_name(request.getParameter("cust"));
+		book.setNum(request.getParameter("num"));
+		
+		this.custList.update(book);
+		
+		 //redirectAttributes.addAttribute("num", request.getParameter("num"));
+		
+		return "redirect:/index.html";
+	}
 	
 }
