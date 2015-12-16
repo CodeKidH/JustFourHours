@@ -16,4 +16,6 @@ public interface DaoList {
 	void delete(String num) throws SQLException;
 	
 	public void update(Book nook) throws SQLException;
+	
+	public int getCount() throws SQLException;
 }

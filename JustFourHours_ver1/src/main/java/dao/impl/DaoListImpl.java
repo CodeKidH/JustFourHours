@@ -44,5 +44,11 @@ public class DaoListImpl implements DaoList{
 		query.update("Book.update",book);
 	}
 	
+	public int getCount()throws SQLException{
+		
+		return  (int) query.queryForObject("Book.getCount");
+		
+	}
+	
 	
 }

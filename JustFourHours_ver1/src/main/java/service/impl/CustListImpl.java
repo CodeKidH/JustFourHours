@@ -38,4 +38,8 @@ public class CustListImpl implements CustList{
 	public void update(Book book) throws SQLException{
 		this.daoList.update(book);
 	}
+	
+	public int getCount()throws SQLException{
+		return this.daoList.getCount();
+	}
 }

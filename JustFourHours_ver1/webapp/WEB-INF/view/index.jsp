@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>People List</h2>
+		<h2>People List</h2><h3>total:"${totalCount}"</h3>
 		<input type="button" name="insert" value="insert" onClick="location.href='insertMove.html'"/>
 		<table border = "1" width="450">
 			<thead>
@@ -39,17 +39,51 @@
 			</c:forEach>
 			</tbody>
 		</table>
+		
+		<input type="hidden" id="pageCount" value="${pageCount}"/>
+		<div id="paging">
+			
+		</div>
 	
 		<div id="search">
 			<form>
 				<div >
 					Search
-					<input type="text" id="context">
-					<button type="submit" >search</button>
+					<input type="text" id="context" value="">
+					<button type="submit" onClick="btnSearch()">search</button>
 				</div>
-				
 			</form>
 		</div>
 	</div>
+	
+<script type="text/javascript">
+	
+	var pageCount = document.getElementById("pageCount").value;
+	
+	for(var i = 0; i< pageCount; i++){
+		document.getElementById("paging").appendChild(innerCountPageNum(i));
+	}
+	
+	
+	function innerCountPageNum(i){
+		
+		var node = document.createElement("div");
+		var textNode = document.createTextNode(i);
+		node.appendChild(textNode);
+		
+		return node;
+	}
+	
+	function btnSearch(){
+		var search = document.getElementById("context").value;
+		
+		if(search == "" || search == null){
+			alert("Please, Enter a value");
+		}else{
+			
+		}
+	}
+	
+</script>
 </body>
 </html>

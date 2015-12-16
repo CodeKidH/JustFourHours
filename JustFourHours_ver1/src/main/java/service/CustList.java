@@ -17,4 +17,6 @@ public interface CustList {
 	
 	public void update(Book book)throws SQLException;
 	
+	public int getCount() throws SQLException;
+	
 }

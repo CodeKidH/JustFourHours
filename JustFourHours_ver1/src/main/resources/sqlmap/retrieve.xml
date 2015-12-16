@@ -12,7 +12,11 @@
 	</resultMap>
 	
 	<select id="getBookList" resultMap="bookList">
-		SELECT num, cust_name, book_title, borrow_date FROM CUSTOMER_LIST
+		select num, cust_name, book_title, borrow_date FROM CUSTOMER_LIST
+	</select>
+	
+	<select id="getCount" resultClass="Integer">
+		SELECT count(*) FROM CUSTOMER_LIST
 	</select>
 	
 	<insert id="insertBook" parameterClass="model.Book">

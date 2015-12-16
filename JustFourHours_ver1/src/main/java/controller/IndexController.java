@@ -30,11 +30,26 @@ public class IndexController {
 	private CustList custList;
 	
 	@RequestMapping("index")
-	public void index(Model model) throws SQLException{
+	public ModelAndView index() throws SQLException{
 		
+		Map<String,Object> model = new HashMap<>();
 		List<Book> getList = this.custList.getList();
+		int count = this.custList.getCount();
 		
-		model.addAttribute("custList",getList);
+		int pageCount = 0;
+		
+		pageCount = count/3;
+		
+		model.put("custList", getList);
+		model.put("totalCount", count);
+		model.put("pageCount",pageCount);
+		
+		
+		ModelAndView modelAndView = new ModelAndView();
+		
+		modelAndView.addAllObjects(model);
+		
+		return modelAndView;
 		
 	}
 	
