@@ -58,18 +58,26 @@
 	
 <script type="text/javascript">
 	
-	var pageCount = document.getElementById("pageCount").value;
-	
-	for(var i = 0; i< pageCount; i++){
-		document.getElementById("paging").appendChild(innerCountPageNum(i));
-	}
+	document.getElementById("paging").appendChild(innerCountPageNum());
 	
 	
 	function innerCountPageNum(i){
 		
+		var pageCount = document.getElementById("pageCount").value;
+		var pageCount = pageCount;
+		var str = "";
+		
+		for(var i = 1; i< pageCount; i++){
+		
+			str += "<a href =index.html?currentPage="+i+">";
+			str += i;
+			str += "</a>";
+			str += " ";
+		}
+		
 		var node = document.createElement("div");
-		var textNode = document.createTextNode(i);
-		node.appendChild(textNode);
+		node.innerHTML = str;
+		//var textNode = document.createTextNode(str);
 		
 		return node;
 	}

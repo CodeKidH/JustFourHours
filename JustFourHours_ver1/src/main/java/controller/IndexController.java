@@ -1,6 +1,7 @@
 package controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.tags.Param;
 
 import service.CustList;
 
@@ -30,17 +32,37 @@ public class IndexController {
 	private CustList custList;
 	
 	@RequestMapping("index")
-	public ModelAndView index() throws SQLException{
+	public ModelAndView index(@RequestParam(value="currentPage",defaultValue="1")int currentPage) throws SQLException{
 		
 		Map<String,Object> model = new HashMap<>();
+		List<Map<String,Object>> currentPageCount = new ArrayList<Map<String,Object>>(); ;
+		Map<String,Object> pageContent = new HashMap<>();
+		
 		List<Book> getList = this.custList.getList();
 		int count = this.custList.getCount();
+		
+		for(int i = 0; i< getList.size(); i++){
+			
+			pageContent.put("content"+i, getList.get(i));
+			
+			i = i+1;
+			if(i % 3 == 0 && i != 0){
+				 currentPageCount.add(pageContent);
+				 
+				 pageContent = new HashMap<>();
+			}else{
+				i = i-1;
+			}
+			
+		}
+		
 		
 		int pageCount = 0;
 		
 		pageCount = count/3;
+		pageCount = pageCount + 1;
 		
-		model.put("custList", getList);
+		model.put("custList", currentPageCount);
 		model.put("totalCount", count);
 		model.put("pageCount",pageCount);
 		
