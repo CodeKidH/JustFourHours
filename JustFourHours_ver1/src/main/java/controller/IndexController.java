@@ -35,39 +35,42 @@ public class IndexController {
 	public ModelAndView index(@RequestParam(value="currentPage",defaultValue="1")int currentPage) throws SQLException{
 		
 		Map<String,Object> model = new HashMap<>();
-		List<Map<String,Object>> currentPageCount = new ArrayList<Map<String,Object>>(); ;
-		Map<String,Object> pageContent = new HashMap<>();
+		List<Object> currentPageCount = new ArrayList<>(); 
+		ModelAndView modelAndView = new ModelAndView();
+		int k = 0;
+		int pageCount = 0;
+		Object[] pageContents = new Object[3];
 		
-		List<Book> getList = this.custList.getList();
 		int count = this.custList.getCount();
+		List<Book> getList = this.custList.getList();
 		
 		for(int i = 0; i< getList.size(); i++){
 			
-			pageContent.put("content"+i, getList.get(i));
+			pageContents[k] = getList.get(i);
 			
 			i = i+1;
+			k = k+1;
 			if(i % 3 == 0 && i != 0){
-				 currentPageCount.add(pageContent);
+				 currentPageCount.add(pageContents);
+				 pageContents = new Object[3];
+				 i = i-1;
+				 k = 0;
 				 
-				 pageContent = new HashMap<>();
 			}else{
-				i = i-1;
+				 i = i-1;
 			}
 			
 		}
 		
 		
-		int pageCount = 0;
-		
 		pageCount = count/3;
 		pageCount = pageCount + 1;
 		
-		model.put("custList", currentPageCount);
+		currentPage = currentPage -1;
+		
+		model.put("custList", currentPageCount.get(currentPage));
 		model.put("totalCount", count);
 		model.put("pageCount",pageCount);
-		
-		
-		ModelAndView modelAndView = new ModelAndView();
 		
 		modelAndView.addAllObjects(model);
 		
