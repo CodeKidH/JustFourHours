@@ -39,10 +39,18 @@ public class IndexController {
 		ModelAndView modelAndView = new ModelAndView();
 		int k = 0;
 		int pageCount = 0;
-		Object[] pageContents = new Object[3];
-		
+		int size = 0;
 		int count = this.custList.getCount();
+		int innerSize = count;
 		List<Book> getList = this.custList.getList();
+		
+		if(getList.size() < 3){
+			size = getList.size();
+		}else{
+			size = 3;
+		}
+		
+		Object[] pageContents = new Object[size];
 		
 		for(int i = 0; i< getList.size(); i++){
 			
@@ -52,19 +60,30 @@ public class IndexController {
 			k = k+1;
 			if(i % 3 == 0 && i != 0){
 				 currentPageCount.add(pageContents);
-				 pageContents = new Object[3];
+				 
+				 innerSize = innerSize - 3;
+				 
+				 if(innerSize < 3){
+					 size = innerSize;
+				 }else {
+					 size = 3;
+				 }
+				 pageContents = new Object[size];
 				 i = i-1;
 				 k = 0;
-				 
 			}else{
 				 i = i-1;
 			}
 			
 		}
 		
+		currentPageCount.add(pageContents);
 		
-		pageCount = count/3;
-		pageCount = pageCount + 1;
+		if(count % 3 == 0){
+			pageCount = count/3 + 1;
+		}else{
+			pageCount = count/3 + 2;
+		}
 		
 		currentPage = currentPage -1;
 		
