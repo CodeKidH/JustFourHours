@@ -19,4 +19,6 @@ public interface CustList {
 	
 	public int getCount() throws SQLException;
 	
+	Book getSearch(String title) throws SQLException;
+	
 }

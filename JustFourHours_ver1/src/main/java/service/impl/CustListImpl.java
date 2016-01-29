@@ -42,4 +42,8 @@ public class CustListImpl implements CustList{
 	public int getCount()throws SQLException{
 		return this.daoList.getCount();
 	}
+	
+	public Book getSearch(String content)throws SQLException{
+		return this.daoList.getSearch(content);
+	}
 }

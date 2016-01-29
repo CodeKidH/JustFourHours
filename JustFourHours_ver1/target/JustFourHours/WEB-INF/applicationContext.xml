@@ -13,13 +13,11 @@
 	
 	<tx:annotation-driven />
 	
-	
-	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		
 		<property name="driverClassName">
-			 <value>com.mysql.jdbc.Driver</value>
-			<!-- <value>oracle.jdbc.driver.OracleDriver</value>-->
+		 <value>com.mysql.jdbc.Driver</value>
+		<!--<value>oracle.jdbc.driver.OracleDriver</value>-->
 		</property>
 		
 		<property name="url">
@@ -35,6 +33,11 @@
 		<property name="password">
 			<value>1111</value>
 		</property>
+	</bean>
+	
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"/>
 	</bean>
 	
 	

@@ -18,4 +18,6 @@ public interface DaoList {
 	public void update(Book nook) throws SQLException;
 	
 	public int getCount() throws SQLException;
+	
+	Book getSearch(String content)throws SQLException;
 }

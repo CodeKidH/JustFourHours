@@ -41,6 +41,18 @@
 	      		 book_title = #book_title#
 	      WHERE  num = #num#
 	  </update>
-	
+	  
+	  <select id="getSearch" parameterClass="String" resultClass="Book">
+	  	  
+	  	  SELECT *
+	  	  FROM CUSTOMER_LIST 
+	  	  WHERE BOOK_TITLE LIKE concat('%', #book_title#, '%')
+	  	  
+	  	  <!--Oracle :  WHERE name LIKE ‘%’ || #{name} || ‘%’  -->
+	  	  <!--MySQL :   WHERE name LIKE CONCAT(‘%’, #{name}, ‘%’) -->
+			
+	  	  
+	  </select>
+		
 	
 </sqlMap>

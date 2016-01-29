@@ -14,17 +14,11 @@
 	
 	<mvc:annotation-driven />
 	
-	 <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean id="loggerInterceptor" class="logger.LoggerInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
 	
 	<bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/WEB-INF/</value>
+			<value>/WEB-INF/view/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>

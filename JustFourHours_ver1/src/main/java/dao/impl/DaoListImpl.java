@@ -50,5 +50,11 @@ public class DaoListImpl implements DaoList{
 		
 	}
 	
+	public Book getSearch(String book_title) throws SQLException{
+		
+		Book getSearch = (Book) query.queryForObject("Book.getSearch",book_title);
+		return getSearch;
+	}
+	
 	
 }

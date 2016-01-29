@@ -47,15 +47,14 @@
 	
 		<div id="search">
 			<form>
-				<div >
-					Search
 					<input type="text" id="context" value="">
-					<button type="submit" onClick="btnSearch()">search</button>
-				</div>
+					<input type="button" onClick="btnSearch()" value="search"/>
 			</form>
 		</div>
 	</div>
-	
+</body>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript">
 	
 	document.getElementById("paging").appendChild(innerCountPageNum());
@@ -83,15 +82,24 @@
 	}
 	
 	function btnSearch(){
-		var search = document.getElementById("context").value;
+		var search = $('#context').val();
 		
 		if(search == "" || search == null){
 			alert("Please, Enter a value");
 		}else{
-			
+			$.ajax({
+				type:"Get",
+				url:"search.html",
+				data:"content="+search,
+				success: function(response){
+					alert(response);
+				},
+				error: function(e){
+					alert(e);
+				}
+			});
 		}
 	}
 	
 </script>
-</body>
 </html>

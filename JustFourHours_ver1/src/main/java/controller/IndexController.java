@@ -17,9 +17,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.tags.Param;
 
 import service.CustList;
 
@@ -76,7 +76,7 @@ public class IndexController {
 			}
 			
 		}
-		
+		System.out.println(org.springframework.core.SpringVersion.getVersion());
 		currentPageCount.add(pageContents);
 		
 		if(count % 3 == 0){
@@ -155,6 +155,21 @@ public class IndexController {
 		 //redirectAttributes.addAttribute("num", request.getParameter("num"));
 		
 		return "redirect:/index.html";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="search", method=RequestMethod.GET)
+	public  HashMap<String,Object> search(@RequestParam(value="content") String content) throws SQLException{
+		
+		Book getBook = this.custList.getSearch(content);
+		
+		HashMap<String,Object> map = new HashMap<>();
+		map.put("title", getBook.book_title);
+		map.put("name", getBook.cust_name);
+		map.put("num", getBook.num);
+		
+		
+		return map;
 	}
 	
 }
