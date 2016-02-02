@@ -12,12 +12,15 @@ import model.Book;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -157,16 +160,15 @@ public class IndexController {
 		return "redirect:/index.html";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="search", method=RequestMethod.GET)
-	public  HashMap<String,Object> search(@RequestParam(value="content") String content) throws SQLException{
+	@RequestMapping(value="search/{context}", method=RequestMethod.GET)
+	public  @ResponseBody Book search(@PathVariable String context) throws SQLException{
 		
-		Book getBook = this.custList.getSearch(content);
+		Book getBook = this.custList.getSearch(context);
 		
-		HashMap<String,Object> map = new HashMap<>();
-		map.put("title", getBook.book_title);
-		map.put("name", getBook.cust_name);
-		map.put("num", getBook.num);
+		Book map =new Book();
+		map.setBook_title(getBook.book_title);
+		map.setCust_name(getBook.cust_name);
+		map.setNum(getBook.num);
 		
 		
 		return map;

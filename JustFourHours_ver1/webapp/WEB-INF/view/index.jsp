@@ -47,7 +47,7 @@
 	
 		<div id="search">
 			<form>
-					<input type="text" id="context" value="">
+					<input type="text" id="context" name="context"value="">
 					<input type="button" onClick="btnSearch()" value="search"/>
 			</form>
 		</div>
@@ -87,17 +87,18 @@
 		if(search == "" || search == null){
 			alert("Please, Enter a value");
 		}else{
-			$.ajax({
-				type:"Get",
-				url:"search.html",
-				data:"content="+search,
-				success: function(response){
-					alert(response);
-				},
-				error: function(e){
-					alert(e);
-				}
+			
+			$.getJSON('search/'+$('#context').val(),function(result){
+				
+				var html = '<tr>'+
+								'<td>'+result.num+'</td>'+
+								'<td>'+result.cust_name+'</td>'+
+								'<td>'+'<a href=\"detail.html?num='+result.num+'\">'+result.book_title+'</a>'+'</td>'+
+						  '</tr>';
+				
+				$("tbody").html(html);
 			});
+			
 		}
 	}
 	
